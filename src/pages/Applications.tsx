@@ -18,7 +18,8 @@ function modulesFromText(value: string) {
     .split(',')
     .map((item) => item.trim())
     .filter(Boolean)
-    .map((code) => ({ code: code.toUpperCase(), name: code }));
+    .map((code) => code.toLowerCase())
+    .map((code) => ({ code, name: code }));
 }
 
 function Applications() {
